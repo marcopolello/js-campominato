@@ -13,7 +13,7 @@ console.log(listaNumRandomPc);
 // In seguito deve chiedere all’utente (100 - 16)volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 
-var numUserAsk = askNumbers(84);
+var numUserAsk = askNumbers(4);
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 console.log("il tuo punteggio è: ", numUserAsk);
 
