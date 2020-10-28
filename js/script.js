@@ -17,6 +17,9 @@ console.log(numRandomPc);
 var numUserAsk = askNumbers(4);
 console.log(numUserAsk);
 
+// Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
+
+
 
 
 
@@ -44,6 +47,7 @@ function randomNumbers(x)
   while(sediciNumRandom.length < x)
   {
     var r = Math.floor(Math.random() * 100) + 1;
+    //finchè r non esiste dentro all'array continuo a pushare un altro r per un massimo di x volte
     if(sediciNumRandom.indexOf(r) === -1) sediciNumRandom.push(r);
   }
   // console.log(sediciNumRandom);
@@ -57,6 +61,7 @@ function askNumbers(n) {
   while (listaNumUser.length < n)
   {
     var richiesta = parseInt(prompt("inserisci un numero da 1 a 100"));
+    // L’utente non può inserire più volte lo stesso numero.
     if(listaNumUser.indexOf(richiesta) === -1) listaNumUser.push(richiesta);
   }
   // console.log(listaNumUser);
