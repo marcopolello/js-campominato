@@ -8,3 +8,22 @@
 
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
+// creo una variabile che tenga il risultato della funzione che mi crea i 16 numeri
+var numRandomPc = randomNumbers(16);
+console.log(numRandomPc);
+
+
+
+// FUNZIONI
+function randomNumbers(x)
+{
+  // mi salvo i 16 numeri in un array
+  var sediciNumRandom = [];
+  while(sediciNumRandom.length < x)
+  {
+    var r = Math.floor(Math.random() * 100) + 1;
+    if(sediciNumRandom.indexOf(r) === -1) sediciNumRandom.push(r);
+  }
+  // console.log(sediciNumRandom);
+  return sediciNumRandom;
+}
