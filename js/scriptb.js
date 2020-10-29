@@ -19,7 +19,7 @@ console.log(bombe);
 var exit = true;
 var numeriInseriti = [];
 
-for (var i = 0; numeriInseriti.length < 84 && exit == true; i++) {
+for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
   var numeroUser = parseInt(prompt("inserisci un numero da 1 a 100"));
   if (numeroUser > 100){
     alert("numero troppo grande");

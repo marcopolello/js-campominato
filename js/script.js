@@ -16,8 +16,8 @@ console.log(bombe);
 
 
 // variabile che contiene il punteggio
-// var numUserAsk = askNumbers(4);
-// console.log("il tuo punteggio è: ", numUserAsk);
+var numUserAsk = askNumbers(4);
+console.log("il tuo punteggio è: ", numUserAsk);
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 // creo una funzione che chieda all'utente un numero da 1 a 100, (n)volte
 function askNumbers(n)
