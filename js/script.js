@@ -7,15 +7,19 @@
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 // creo una variabile che tenga il risultato della funzione che mi crea i 16 numeri
-var listaNumRandomPc = randomNumbers(16);
-console.log(listaNumRandomPc);
+var bombe = randomNumbers(16);
+console.log(bombe);
 
 // In seguito deve chiedere all’utente (100 - 16)volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 
+// var listaNumUser = userNumberCheck(2)
+// console.log(listaNumUser);
+
+// variabile che contiene il punteggio
 var numUserAsk = askNumbers(4);
-// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 console.log("il tuo punteggio è: ", numUserAsk);
+// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 
 
 
@@ -52,33 +56,52 @@ function randomNumbers(x)
   return numeriRandom;
 }
 
-// creo una funzione che chieda all'utente un numero da 1 a 100 (n)volte
+// creo una funzione che mi salva i numeri dell'utente a patto che siano > 0 e minori di 100
+function userNumberCheck(x)
+{
+  // mi salvo i numeri dati dall'utente in un array
+  var numeriUser = [];
+  while(numeriUser.length < x)
+  {
+    var numUser = parseInt(prompt("scrivi un numero compreso tra 1 e 100"));
+    //finchè r non esiste dentro all'array continuo a pushare un altro r per un massimo di x volte
+    if((numeriUser.indexOf(numUser) === -1) && (numUser <= 100) && (numUser > 0) && (numUser != ""))
+    {
+      numeriUser.push(numUser);
+    }
+  }
+  // console.log(numeriUser);
+  return numeriUser;
+}
+
+// creo una funzione che chieda all'utente un numero da 1 a 100, (n)volte
 function askNumbers(n)
 {
   var conteggio = 0;
   for (var a = 0; (a < n && a != n); a++)
   {
-    var numUser = parseInt(prompt("scrivi un numero compreso tra 1 e 100"));
+    var numUser = userNumberCheck(1);
     console.log(numUser);
     var verifica = false;
-    for (var i = 0; i < listaNumRandomPc.length; i++)
-    {
-      var item = listaNumRandomPc[i]
-      // console.log(item);
-      if (numUser == item)
+    // ciclo che mi controlla se il numeroUtente è uguale ad uno di quelli Random
+      for (var i = 0; i < bombe.length; i++)
       {
-        verifica = true;
+        var item = bombe[i]
+        // console.log(item);
+        if (numUser == item)
+        {
+          verifica = true;
+        }
       }
-    }
-    if (verifica == true)
-    {
-      console.log("il tuo numero ha preso una bomba");
-      a = n; //per farlo uscire subito dal ciclo
-    } else
-    {
-      console.log("non hai colpito nessuna bomba");
-      conteggio = conteggio + 10;
-    }
+      if (verifica == true)
+      {
+        console.log("il tuo numero ha preso una bomba");
+        a = n; //per farlo uscire subito dal ciclo
+      } else
+      {
+        console.log("non hai colpito nessuna bomba");
+        conteggio = conteggio + 10;
+      }
   }
   console.log(conteggio, "10 punti ogni numero esatto");
   return conteggio;
