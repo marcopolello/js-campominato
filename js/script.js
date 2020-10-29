@@ -12,41 +12,7 @@ console.log(bombe);
 
 // In seguito deve chiedere all’utente (100 - 16)volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
-var punteggio = 0;
-var exit = true;
-var numeriInseriti = [];
-for (var i = 0; numeriInseriti.length < 84 && exit == true; i++) {
-  var numeroUser = parseInt(prompt("inserisci un numero da 1 a 100"));
-  if (numeroUser > 100){
-    alert("numero troppo grande");
-  } else if (numeroUser <= 0) {
-    alert("numero troppo piccolo");
-  } else if(numeriInseriti.indexOf(numeroUser) === -1){
-    numeriInseriti.push(numeroUser);
-  }
-  var verifica = false;
-  // ciclo che mi controlla se il numeroUtente è uguale ad uno di quelli Random
-    for (var i = 0; i < bombe.length; i++)
-    {
-      var item = bombe[i]
-      // console.log(item);
-      if (item == numeroUser)
-      {
-        verifica = true;
-      }
-    }
-    if (verifica == true)
-    {
-      console.log("il tuo numero ha preso una bomba");
-      exit = false;
-    } else
-    {
-      console.log("non hai colpito nessuna bomba");
-      punteggio++
-    }
-}
-console.log(numeriInseriti, "<--i numeri che hai inserito");
-console.log(punteggio, "<--punti presi");
+
 
 
 // variabile che contiene il punteggio
@@ -54,7 +20,7 @@ console.log(punteggio, "<--punti presi");
 // console.log("il tuo punteggio è: ", numUserAsk);
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 // creo una funzione che chieda all'utente un numero da 1 a 100, (n)volte
-/* function askNumbers(n)
+function askNumbers(n)
 {
   var conteggio = 0;
   for (var a = 0; (a < n && a != n); a++)
@@ -84,7 +50,7 @@ console.log(punteggio, "<--punti presi");
   }
   console.log(conteggio, "10 punti ogni numero esatto");
   return conteggio;
-}  */
+}
 
 
 

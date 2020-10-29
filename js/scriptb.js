@@ -16,9 +16,10 @@ for (var i = 0; bombe.length < 16; i++) {
 }
 console.log(bombe);
 
-// chiedo all'utente un numero tot. volte
+var exit = true;
 var numeriInseriti = [];
-for (var i = 0; numeriInseriti.length < 5; i++) {
+
+for (var i = 0; numeriInseriti.length < 84 && exit == true; i++) {
   var numeroUser = parseInt(prompt("inserisci un numero da 1 a 100"));
   if (numeroUser > 100){
     alert("numero troppo grande");
@@ -26,6 +27,28 @@ for (var i = 0; numeriInseriti.length < 5; i++) {
     alert("numero troppo piccolo");
   } else if(numeriInseriti.indexOf(numeroUser) === -1){
     numeriInseriti.push(numeroUser);
-  } 
+  }
+  var verifica = false;
+  // ciclo che mi controlla se il numeroUtente è uguale ad uno di quelli Random
+    for (var i = 0; i < bombe.length; i++)
+    {
+      var item = bombe[i]
+      // console.log(item);
+      if (item == numeroUser)
+      {
+        verifica = true;
+      }
+    }
+    if (verifica == true)
+    {
+      console.log("il tuo numero ha preso una bomba");
+      exit = false;
+    } else
+    {
+      console.log("non hai colpito nessuna bomba");
+      // punteggio++
+    }
 }
-console.log(numeriInseriti);
+console.log(numeriInseriti, "<--i numeri che hai inserito");
+var punteggio = numeriInseriti.length;
+console.log(punteggio, "<--punti presi");
