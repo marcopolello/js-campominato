@@ -25,13 +25,6 @@ for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
   if((numeriInseriti.indexOf(numeroUser) === -1) && (numeroUser <= 100) && (numeroUser > 0) && (numeroUser != "")){
     numeriInseriti.push(numeroUser);
   }
-  /* if (numeroUser > 100){
-    alert("numero troppo grande");
-  } else if (numeroUser <= 0) {
-    alert("numero troppo piccolo");
-  } else if(numeriInseriti.indexOf(numeroUser) === -1){
-    numeriInseriti.push(numeroUser);
-  } */
   var verifica = false;
   // ciclo che mi controlla se il numeroUtente è uguale ad uno di quelli Random
     for (var i = 0; i < bombe.length; i++)
