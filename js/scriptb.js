@@ -18,16 +18,20 @@ console.log(bombe);
 
 var exit = true;
 var numeriInseriti = [];
+var numeriInseritiSbagliati = [];
 
 for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
   var numeroUser = parseInt(prompt("inserisci un numero da 1 a 100"));
-  if (numeroUser > 100){
+  if((numeriInseriti.indexOf(numeroUser) === -1) && (numeroUser <= 100) && (numeroUser > 0) && (numeroUser != "")){
+    numeriInseriti.push(numeroUser);
+  }
+  /* if (numeroUser > 100){
     alert("numero troppo grande");
   } else if (numeroUser <= 0) {
     alert("numero troppo piccolo");
   } else if(numeriInseriti.indexOf(numeroUser) === -1){
     numeriInseriti.push(numeroUser);
-  }
+  } */
   var verifica = false;
   // ciclo che mi controlla se il numeroUtente è uguale ad uno di quelli Random
     for (var i = 0; i < bombe.length; i++)
@@ -37,12 +41,14 @@ for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
       if (item == numeroUser)
       {
         verifica = true;
+        numeriInseritiSbagliati.push(numeroUser);
       }
     }
     if (verifica == true)
     {
       console.log("il tuo numero ha preso una bomba");
       exit = false;
+
     } else
     {
       console.log("non hai colpito nessuna bomba");
@@ -50,5 +56,5 @@ for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
     }
 }
 console.log(numeriInseriti, "<--i numeri che hai inserito");
-var punteggio = numeriInseriti.length;
+var punteggio = numeriInseriti.length - numeriInseritiSbagliati.length;
 console.log(punteggio, "<--punti presi");
