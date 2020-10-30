@@ -15,10 +15,9 @@ for (var i = 0; bombe.length < 16; i++) {
   }
 }
 console.log(bombe);
-
 var exit = true;
 var numeriInseriti = [];
-var numeriInseritiSbagliati = [];
+var numSbagliato = [];
 
 for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
   var numeroUser = parseInt(prompt("inserisci un numero da 1 a 100"));
@@ -34,7 +33,7 @@ for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
       if (item == numeroUser)
       {
         verifica = true;
-        numeriInseritiSbagliati.push(numeroUser);
+        numSbagliato.push(numeroUser);
       }
     }
     if (verifica == true)
@@ -49,5 +48,5 @@ for (var i = 0; numeriInseriti.length < 4 && exit == true; i++) {
     }
 }
 console.log(numeriInseriti, "<--i numeri che hai inserito");
-var punteggio = numeriInseriti.length - numeriInseritiSbagliati.length;
+var punteggio = numeriInseriti.length - numSbagliato.length;
 console.log(punteggio, "<--punti presi");
