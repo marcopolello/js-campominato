@@ -30,7 +30,6 @@ switch (livello) {
   alert("inserisci una difficoltà")
 }
 
-
 // GIOCO CAMPOMINATO
 
 // variabili GIOCO
